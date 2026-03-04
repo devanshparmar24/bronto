@@ -12,7 +12,7 @@ export default function PerformanceStats() {
   return (
     <section className="bg-white py-32">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl scroll-mt-24 mx-auto px-6 md:px-12">
 
         {/* Heading */}
 

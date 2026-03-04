@@ -29,7 +29,7 @@ export default function Capabilities() {
 
 
   return (
-    <section className="bg-[#0b0b0b] text-white py-32">
+    <section className="bg-[#0b0b0b] scroll-mt-24 text-white py-32">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 

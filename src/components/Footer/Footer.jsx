@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#0b0b0b] text-gray-400 pt-24 pb-10 px-6 md:px-12">
+    <footer className="bg-[#0b0b0b]  text-gray-400 pt-24 pb-10 px-6 md:px-12">
 
       {/* Top Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
