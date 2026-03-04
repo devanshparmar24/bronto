@@ -1,91 +1,83 @@
 export default function Architecture() {
+
+  const layers = [
+    {
+      title: "AI / Data Workloads",
+      desc: "Machine learning pipelines, analytics systems and enterprise applications generating massive datasets."
+    },
+    {
+      title: "Compute Layer",
+      desc: "GPU clusters and containerized workloads processing large scale data."
+    },
+    {
+      title: "BRONTOSTOR Core Engine",
+      desc: "Distributed storage orchestration layer managing replication and performance."
+    },
+    {
+      title: "Distributed Storage Nodes",
+      desc: "Thousands of NVMe or HDD nodes forming scalable storage clusters."
+    },
+    {
+      title: "Unified Access Layer",
+      desc: "Global namespace enabling File, Block and Object access."
+    }
+  ]
+
   return (
-    <section className="bg-[#0b0b0b] py-32 text-white">
+    <section className="bg-[#0b0b0b] text-white py-32">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-6xl mx-auto px-6">
 
-        {/* Heading */}
+        {/* Section Header */}
 
         <div className="text-center max-w-3xl mx-auto">
 
           <h2 className="text-4xl font-bold">
-            How BRONTOSTOR Works
+            Architecture Overview
           </h2>
 
           <p className="text-gray-400 mt-6">
-            A distributed storage architecture built to handle
-            AI workloads, massive data pipelines and edge deployments.
+            BRONTOSTOR distributes data intelligently across compute
+            and storage nodes to support massive AI workloads.
           </p>
 
         </div>
 
 
-        {/* Architecture Grid */}
+        {/* Architecture Flow */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20">
+        <div className="mt-20 flex flex-col items-center">
 
-          {/* AI Workloads */}
+          {layers.map((layer, index) => (
+            <div key={index} className="flex flex-col items-center">
 
-          <div className="p-8 border border-white/10 rounded-xl bg-white/5 backdrop-blur hover:border-purple-500 transition">
+              {/* Layer Box */}
 
-            <h3 className="text-xl font-semibold">
-              AI Workloads
-            </h3>
+              <div className="relative group max-w-xl w-full p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur hover:border-purple-500 transition">
 
-            <p className="text-gray-400 mt-4">
-              Machine learning pipelines, inference engines
-              and analytics workloads generate massive data.
-            </p>
+                <h3 className="text-xl font-semibold">
+                  {layer.title}
+                </h3>
 
-          </div>
+                <p className="text-gray-400 mt-3">
+                  {layer.desc}
+                </p>
 
-
-          {/* Compute Nodes */}
-
-          <div className="p-8 border border-white/10 rounded-xl bg-white/5 backdrop-blur hover:border-purple-500 transition">
-
-            <h3 className="text-xl font-semibold">
-              Compute Nodes
-            </h3>
-
-            <p className="text-gray-400 mt-4">
-              GPU accelerated compute clusters process
-              high throughput AI workloads.
-            </p>
-
-          </div>
+              </div>
 
 
-          {/* Storage Cluster */}
+              {/* Flow Line */}
 
-          <div className="p-8 border border-white/10 rounded-xl bg-white/5 backdrop-blur hover:border-purple-500 transition">
+              {index !== layers.length - 1 && (
+                <div className="relative h-16 w-px bg-gradient-to-b from-purple-500 to-blue-500">
 
-            <h3 className="text-xl font-semibold">
-              Storage Cluster
-            </h3>
+                  <div className="data-flow"></div>
 
-            <p className="text-gray-400 mt-4">
-              BRONTOSTOR distributes data across thousands
-              of nodes for reliability and scale.
-            </p>
+                </div>
+              )}
 
-          </div>
-
-
-          {/* Global Namespace */}
-
-          <div className="p-8 border border-white/10 rounded-xl bg-white/5 backdrop-blur hover:border-purple-500 transition">
-
-            <h3 className="text-xl font-semibold">
-              Unified Namespace
-            </h3>
-
-            <p className="text-gray-400 mt-4">
-              File, block and object storage accessible
-              through one unified global namespace.
-            </p>
-
-          </div>
+            </div>
+          ))}
 
         </div>
 
