@@ -1,6 +1,6 @@
 export default function Overview() {
   return (
-    <section className="bg-gray-50  py-32">
+    <section className="bg-gray-50 scroll-mt-24 py-32">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
