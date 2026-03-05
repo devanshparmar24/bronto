@@ -1,37 +1,44 @@
+"use client"
+import { useState } from "react"
+
 export default function Capabilities() {
+
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState(null)
 
   const capabilities = [
     {
       title: "GPU Direct Storage",
-      desc: "Accelerate AI workloads by enabling direct data transfer between GPUs and storage."
+      desc: "Accelerate AI workloads by enabling direct GPU ↔ storage transfer."
     },
     {
       title: "RDMA Networking",
-      desc: "Ultra-low latency networking for high-performance computing and distributed AI."
+      desc: "Ultra-low latency networking for distributed AI."
     },
     {
       title: "Multi-Protocol Access",
-      desc: "Unified support for file, block and object storage under one global namespace."
+      desc: "Unified support for file, object and block storage."
     },
     {
       title: "Kubernetes Integration",
-      desc: "Deploy seamlessly with containerized workloads and modern cloud environments."
+      desc: "Seamless orchestration for containerized workloads."
     },
     {
       title: "NVMe Optimized",
-      desc: "Designed for high-speed NVMe storage delivering massive throughput."
+      desc: "High-throughput NVMe optimized storage."
     },
     {
       title: "Enterprise Data Protection",
-      desc: "Advanced encryption, replication and erasure coding for secure storage."
+      desc: "Encryption, replication and erasure coding."
     }
   ]
 
+  const radius = 220
 
   return (
-    <section className="bg-[#0b0b0b] scroll-mt-24 text-white py-32">
+    <section className="bg-[#0b0b0b] text-white py-24 scroll-mt-24">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}
 
@@ -41,49 +48,108 @@ export default function Capabilities() {
             Key Capabilities
           </h2>
 
-          <p className="text-gray-400 mt-6">
-            Powerful infrastructure features designed to support
-            modern AI and enterprise-scale data platforms.
+          <p className="text-gray-400 mt-4">
+            Powerful infrastructure features designed for modern AI platforms.
           </p>
 
         </div>
 
 
-        {/* Capability Tiles */}
+        {/* Wheel */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+        <div className="flex justify-center mt-20">
 
-          {capabilities.map((cap, index) => (
+          <div
+            className={`relative transition-all duration-500 ${open ? "w-[500px] h-[500px]" : "w-[220px] h-[220px]"}`}
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => {
+              setOpen(false)
+              setActive(null)
+            }}
+          >
 
-            <div
-              key={index}
-              className="
-              group p-8 rounded-xl
-              border border-white/10
-              bg-white/5 backdrop-blur
-              hover:border-purple-500
-              hover:-translate-y-2
-              transition-all duration-500
-              cursor-pointer
-              "
-            >
+            {/* Center Circle */}
 
-              <h3 className="text-xl font-semibold">
-                {cap.title}
+            <div className="
+              absolute left-1/2 top-1/2
+              -translate-x-1/2 -translate-y-1/2
+              w-44 h-44
+              rounded-full
+              border border-purple-500
+              bg-gradient-to-br from-white/5 to-transparent
+              flex items-center justify-center
+              text-center
+              backdrop-blur
+              z-10
+            ">
+              <h3 className="font-semibold text-lg px-6">
+                Key Capabilities
               </h3>
-
-              <p className="
-                text-gray-400 mt-4
-                opacity-0
-                group-hover:opacity-100
-                transition duration-500
-              ">
-                {cap.desc}
-              </p>
-
             </div>
 
-          ))}
+
+            {/* Capability Nodes */}
+
+            {capabilities.map((cap, i) => {
+
+              const angle = (360 / capabilities.length) * i
+              const rad = angle * (Math.PI / 180)
+
+              const x = Math.cos(rad) * radius
+              const y = Math.sin(rad) * radius
+
+              const isActive = active === i
+
+              return (
+                <div
+                  key={i}
+                  onMouseEnter={() => setActive(i)}
+                  style={{
+                    transform: open
+                      ? `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+                      : "translate(-50%, -50%) scale(0.3)",
+                    opacity: open ? 1 : 0
+                  }}
+                  className="
+                    absolute left-1/2 top-1/2
+                    transition-all duration-500
+                    w-52
+                  "
+                >
+
+                  <div
+                    className={`
+                        p-4 rounded-xl border backdrop-blur
+                        transition-all duration-300
+                        origin-center
+                        ${isActive
+                        ? "border-purple-500 bg-purple-500/10 scale-105"
+                        : "border-white/10 bg-white/5"}
+  `}
+                  >
+
+                    <h4 className="text-sm font-semibold">
+                      {cap.title}
+                    </h4>
+
+                    <p className={`
+                      text-xs text-gray-400 mt-2
+                      transition-all duration-300
+                      ${isActive
+                        ? "opacity-100 max-h-40"
+                        : "opacity-0 max-h-0 overflow-hidden"}
+                    `}>
+                      {cap.desc}
+                    </p>
+
+                  </div>
+
+                </div>
+              )
+
+            })}
+
+          </div>
 
         </div>
 
