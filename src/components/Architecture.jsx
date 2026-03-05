@@ -4,45 +4,35 @@ import { useState } from "react"
 
 export default function Architecture() {
 
-  const [active, setActive] = useState(null)
+  const [active, setActive] = useState(2)
 
   const layers = [
     {
       title: "AI / Data Workloads",
-      desc: "Machine learning pipelines and analytics systems.",
-      details:
-        "Training pipelines, inference systems, data lakes, and enterprise analytics generating petabyte-scale workloads."
+      desc: "Training pipelines, inference systems and analytics generating massive datasets."
     },
     {
       title: "Compute Layer",
-      desc: "GPU clusters and distributed compute nodes.",
-      details:
-        "Kubernetes clusters orchestrating GPU workloads for AI training, inference, and large-scale parallel processing."
+      desc: "GPU clusters orchestrated through Kubernetes powering distributed AI computation."
     },
     {
       title: "BRONTOSTOR Core Engine",
-      desc: "Distributed orchestration engine.",
-      details:
-        "Handles replication, metadata management, intelligent data placement and fault tolerance across clusters."
+      desc: "The distributed orchestration layer managing metadata, replication and intelligent data placement."
     },
     {
       title: "Distributed Storage Nodes",
-      desc: "Scalable NVMe / HDD storage clusters.",
-      details:
-        "Thousands of nodes working together with redundancy, load balancing and high throughput networking."
+      desc: "Thousands of NVMe and HDD nodes forming a resilient high throughput storage network."
     },
     {
       title: "Unified Access Layer",
-      desc: "File, Object and Block access.",
-      details:
-        "Global namespace exposing S3, POSIX and block storage interfaces for applications."
+      desc: "Applications access data through file, object and block interfaces with a global namespace."
     }
   ]
 
   return (
     <section className="bg-[#0b0b0b] text-white py-32 scroll-mt-24">
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
 
         {/* Header */}
 
@@ -59,64 +49,72 @@ export default function Architecture() {
 
         </div>
 
-        {/* Stack */}
 
-        <div className="mt-24 flex flex-col gap-6 items-center">
+        <div className="mt-24 grid md:grid-cols-2 gap-16 items-center">
 
-          {layers.map((layer, index) => {
+          {/* Architecture Layers */}
 
-            const isActive = active === index
+          <div className="flex flex-col items-center relative">
 
-            return (
-              <div
-                key={index}
-                onClick={() => setActive(isActive ? null : index)}
-                className={`cursor-pointer w-full max-w-xl rounded-xl border
-                transition-all duration-500 p-8
+            {layers.map((layer, i) => {
 
-                ${
-                  isActive
-                    ? "bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-purple-500 scale-105"
-                    : active !== null
-                    ? "opacity-40 border-white/10 bg-white/5"
-                    : "border-white/10 bg-white/5 hover:border-purple-500"
-                }
-                `}
-              >
+              const isActive = active === i
 
-                <h3 className="text-xl font-semibold">
-                  {layer.title}
-                </h3>
-
-                <p className="text-gray-400 mt-2">
-                  {layer.desc}
-                </p>
-
-                {/* Expanded Content */}
-
+              return (
                 <div
-                  className={`grid transition-all duration-500
-                  ${
-                    isActive
-                      ? "grid-rows-[1fr] opacity-100 mt-6"
-                      : "grid-rows-[0fr] opacity-0"
-                  }
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`relative w-full max-w-sm cursor-pointer
+                  transition-all duration-300
+                  ${isActive ? "scale-105" : "opacity-70 hover:opacity-100"}
                   `}
                 >
-                  <div className="overflow-hidden">
-                    <p className="text-gray-300 text-sm">
-                      {layer.details}
-                    </p>
-                  </div>
-                </div>
 
-              </div>
-            )
-          })}
+                  <div
+                    className={`rounded-xl border p-6 text-center
+                    ${isActive
+                      ? "border-purple-500 bg-purple-500/10"
+                      : "border-white/10 bg-white/5"}
+                    `}
+                  >
+
+                    <h3 className="font-semibold">
+                      {layer.title}
+                    </h3>
+
+                  </div>
+
+                  {/* Connector Line */}
+
+                  {i !== layers.length - 1 && (
+                    <div className="h-10 w-px bg-white/10 mx-auto"></div>
+                  )}
+
+                </div>
+              )
+            })}
+
+          </div>
+
+
+          {/* Details Panel */}
+
+          <div className="bg-white/5 border border-white/10 rounded-xl p-10">
+
+            <h3 className="text-2xl font-semibold">
+              {layers[active].title}
+            </h3>
+
+            <p className="text-gray-400 mt-6 leading-relaxed">
+              {layers[active].desc}
+            </p>
+
+          </div>
 
         </div>
 
       </div>
+
     </section>
   )
 }

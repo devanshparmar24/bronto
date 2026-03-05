@@ -1,10 +1,29 @@
 export default function Overview() {
-  return (
-    <section className="bg-gray-50 scroll-mt-24 py-32">
 
+  const cards = [
+    {
+      title: "Exabyte Scale",
+      desc: "Scale seamlessly up to 8 exabytes with support for thousands of distributed storage nodes."
+    },
+    {
+      title: "AI Optimized",
+      desc: "Built for AI pipelines and GPU accelerated workloads with high throughput performance."
+    },
+    {
+      title: "Multi Protocol",
+      desc: "Unified support for file, block and object storage under a single namespace."
+    },
+    {
+      title: "Edge Ready",
+      desc: "Designed for low latency environments such as telecom, defense and manufacturing."
+    }
+  ]
+
+  return (
+<section className="scroll-mt-24 py-32 bg-gradient-to-b from-white via-gray-50 to-gray-200">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
-        {/* Section Heading */}
+        {/* Heading */}
 
         <div className="text-center max-w-3xl mx-auto">
 
@@ -23,63 +42,64 @@ export default function Overview() {
 
         {/* Cards */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+        <div className="relative flex justify-center mt-20">
 
-          {/* Card */}
+          {/* Top Arrow */}
 
-          <div className="group p-8 bg-white border border-gray-200 rounded-xl h-28 hover:h-48 transition-all duration-500 shadow-sm hover:shadow-xl">
+          <div className="absolute -top-8 text-gray-400 text-2xl animate-bounce">
+            ↑
+          </div>
 
-            <h3 className="text-xl font-semibold text-gray-900">
-              Exabyte Scale
-            </h3>
 
-            <p className="text-gray-600 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              Scale seamlessly up to 8 exabytes with support
-              for thousands of distributed storage nodes.
-            </p>
+          {/* Scroll container */}
+
+          <div
+            className="
+            h-52
+            w-full
+            max-w-md
+            overflow-y-auto
+            snap-y
+            snap-mandatory
+            scrollbar-hide
+            py-16
+            space-y-6
+          "
+          >
+
+            {cards.map((card, i) => (
+              <div
+                key={i}
+                className="
+                snap-center
+                h-40
+                p-8
+                bg-white
+                border border-gray-200
+                rounded-xl
+                shadow-md
+                flex flex-col justify-center
+              "
+              >
+
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {card.title}
+                </h3>
+
+                <p className="text-gray-600 mt-4">
+                  {card.desc}
+                </p>
+
+              </div>
+            ))}
 
           </div>
 
 
-          <div className="group p-8 bg-white border border-gray-200 rounded-xl h-28 hover:h-48 transition-all duration-500 shadow-sm hover:shadow-xl">
+          {/* Bottom Arrow */}
 
-            <h3 className="text-xl font-semibold text-gray-900">
-              AI Optimized
-            </h3>
-
-            <p className="text-gray-600 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              Built for AI pipelines and GPU accelerated
-              workloads with high throughput performance.
-            </p>
-
-          </div>
-
-
-          <div className="group p-8 bg-white border border-gray-200 rounded-xl h-28 hover:h-48 transition-all duration-500 shadow-sm hover:shadow-xl">
-
-            <h3 className="text-xl font-semibold text-gray-900">
-              Multi Protocol
-            </h3>
-
-            <p className="text-gray-600 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              Unified support for file, block and object
-              storage under a single namespace.
-            </p>
-
-          </div>
-
-
-          <div className="group p-8 bg-white border border-gray-200 rounded-xl h-28 hover:h-48 transition-all duration-500 shadow-sm hover:shadow-xl">
-
-            <h3 className="text-xl font-semibold text-gray-900">
-              Edge Ready
-            </h3>
-
-            <p className="text-gray-600 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              Designed for low latency environments such
-              as telecom, defense and manufacturing.
-            </p>
-
+          <div className="absolute -bottom-8 text-gray-400 text-2xl animate-bounce">
+            ↓
           </div>
 
         </div>
@@ -87,5 +107,5 @@ export default function Overview() {
       </div>
 
     </section>
-  );
+  )
 }

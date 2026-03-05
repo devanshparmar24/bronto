@@ -9,7 +9,7 @@ export default function Hero() {
   useEffect(() => {
 
     const handleScroll = () => {
-      setOffset(window.scrollY * 1)
+      setOffset(window.scrollY * 0.6)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -19,10 +19,9 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center">
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center py-28 lg:py-0">
 
       {/* Background Video */}
-
       <video
         autoPlay
         muted
@@ -36,25 +35,21 @@ export default function Hero() {
 
 
       {/* Gradient Overlay */}
-
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
 
 
       {/* Content */}
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
         <div>
 
           {/* Tag */}
-
-          <span className="text-sm uppercase tracking-[0.3em] text-purple-400">
+          <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400">
             Data Center Platform
           </span>
 
           {/* Heading */}
-
-          <h1 className="text-4xl md:text-6xl font-bold text-white mt-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">
 
             Scale Exabyte Storage <br />
 
@@ -66,8 +61,7 @@ export default function Hero() {
 
 
           {/* Description */}
-
-          <p className="text-gray-300 mt-6 max-w-lg text-lg">
+          <p className="text-gray-300 mt-6 max-w-lg text-base sm:text-lg">
 
             BRONTOSTOR is a unified distributed storage platform designed
             for AI, edge computing and exabyte-scale infrastructure.
@@ -76,17 +70,15 @@ export default function Hero() {
 
 
           {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
 
-          <div className="flex gap-4 mt-8">
-
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-lg font-semibold hover:scale-105 transition">
+            <button className="px-6 sm:px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-lg font-semibold hover:scale-105 transition">
 
               Watch Demo
 
             </button>
 
-
-            <button className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition">
+            <button className="px-6 sm:px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition">
 
               Download Datasheet
 
@@ -98,12 +90,11 @@ export default function Hero() {
 
 
         {/* Dashboard Image */}
-
         <div className="hidden lg:flex justify-center">
 
           <img
             src="/images/dashboard.webp"
-            className="w-[520px] rounded-xl shadow-2xl border border-white/10 float-animation"
+            className="w-[420px] xl:w-[520px] rounded-xl shadow-2xl border border-white/10 float-animation"
           />
 
         </div>

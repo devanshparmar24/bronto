@@ -2,36 +2,46 @@
 
 import { useEffect, useState } from "react"
 
-export default function Counter({ end, suffix }) {
+export default function Counter({ end, suffix = "", start, delay = 0 }) {
 
   const [count, setCount] = useState(0)
 
   useEffect(() => {
 
-    let start = 0
+    if (!start) return
+
+    let startTime = null
     const duration = 2000
-    const step = end / (duration / 16)
 
-    const timer = setInterval(() => {
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3)
 
-      start += step
+    const animate = (timestamp) => {
 
-      if (start >= end) {
-        setCount(end)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(start))
+      if (!startTime) startTime = timestamp
+
+      const progress = Math.min((timestamp - startTime) / duration, 1)
+      const eased = easeOut(progress)
+
+      const value = Math.floor(eased * end)
+      setCount(value)
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
       }
 
-    }, 16)
+    }
 
-    return () => clearInterval(timer)
+    const timer = setTimeout(() => {
+      requestAnimationFrame(animate)
+    }, delay)
 
-  }, [end])
+    return () => clearTimeout(timer)
+
+  }, [start, end, delay])
 
   return (
     <span>
-      {count}{suffix}
+      {count.toLocaleString()}{suffix}
     </span>
   )
 }
