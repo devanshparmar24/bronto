@@ -70,18 +70,7 @@ export default function Capabilities() {
 
             {/* Center Circle */}
 
-            <div className="
-              absolute left-1/2 top-1/2
-              -translate-x-1/2 -translate-y-1/2
-              w-44 h-44
-              rounded-full
-              border border-purple-500
-              bg-gradient-to-br from-white/5 to-transparent
-              flex items-center justify-center
-              text-center
-              backdrop-blur
-              z-10
-            ">
+            <div className=" absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 rounded-full border border-purple-500 bg-gradient-to-br from-white/5 to-transparent flex items-center justify-center text-center backdrop-blur z-10">
               <h3 className="font-semibold text-lg px-6">
                 Key Capabilities
               </h3>
@@ -110,35 +99,17 @@ export default function Capabilities() {
                       : "translate(-50%, -50%) scale(0.3)",
                     opacity: open ? 1 : 0
                   }}
-                  className="
-                    absolute left-1/2 top-1/2
-                    transition-all duration-500
-                    w-52
-                  "
+                  className=" absolute left-1/2 top-1/2 transition-all duration-500 w-52"
                 >
 
                   <div
-                    className={`
-                        p-4 rounded-xl border backdrop-blur
-                        transition-all duration-300
-                        origin-center
-                        ${isActive
-                        ? "border-purple-500 bg-purple-500/10 scale-105"
-                        : "border-white/10 bg-white/5"}
-  `}
-                  >
+                    className={` p-4 rounded-xl border backdrop-blur transition-all duration-300 origin-center ${isActive ? "border-purple-500 bg-purple-500/10 scale-105" : "border-white/10 bg-white/5"} `}>
 
                     <h4 className="text-sm font-semibold">
                       {cap.title}
                     </h4>
 
-                    <p className={`
-                      text-xs text-gray-400 mt-2
-                      transition-all duration-300
-                      ${isActive
-                        ? "opacity-100 max-h-40"
-                        : "opacity-0 max-h-0 overflow-hidden"}
-                    `}>
+                    <p className={` text-xs text-gray-400 mt-2 transition-all duration-300 ${isActive ? "opacity-100 max-h-40" : "opacity-0 max-h-0 overflow-hidden"} `}>
                       {cap.desc}
                     </p>
 
