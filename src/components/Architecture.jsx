@@ -17,7 +17,7 @@ export default function Architecture() {
     },
     {
       title: "BRONTOSTOR Core Engine",
-      desc: "The distributed orchestration layer managing metadata, replication and intelligent data placement."
+      desc: "Distributed orchestration layer managing metadata, replication and intelligent data placement."
     },
     {
       title: "Distributed Storage Nodes",
@@ -30,9 +30,13 @@ export default function Architecture() {
   ]
 
   return (
-    <section className="bg-[#0b0b0b] text-white py-32 scroll-mt-24">
+    <section className="bg-[#0b0b0b] text-white py-32 scroll-mt-24 relative overflow-hidden">
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+      {/* Background glow */}
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,80,255,0.15),transparent_70%)]"></div>
+
+      <div className="relative max-w-6xl mx-auto px-6 md:px-12">
 
         {/* Header */}
 
@@ -50,9 +54,9 @@ export default function Architecture() {
         </div>
 
 
-        <div className="mt-24 grid md:grid-cols-2 gap-16 items-center">
+        <div className="mt-24 grid md:grid-cols-2 gap-20 items-center">
 
-          {/* Architecture Layers */}
+          {/* Architecture Pipeline */}
 
           <div className="flex flex-col items-center relative">
 
@@ -64,30 +68,39 @@ export default function Architecture() {
                 <div
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`relative w-full max-w-sm cursor-pointer
-                  transition-all duration-300
-                  ${isActive ? "scale-105" : "opacity-70 hover:opacity-100"}
-                  `}
+                  className="relative flex flex-col items-center cursor-pointer"
                 >
 
+                  {/* Node */}
+
                   <div
-                    className={`rounded-xl border p-6 text-center
-                    ${isActive
-                      ? "border-purple-500 bg-purple-500/10"
-                      : "border-white/10 bg-white/5"}
+                    className={`
+                    w-72 text-center p-6 rounded-xl border transition-all duration-300
+                    ${
+                      isActive
+                        ? "border-purple-500 bg-purple-500/10 shadow-lg shadow-purple-500/20 scale-105"
+                        : "border-white/10 bg-white/5 hover:border-purple-400"
+                    }
                     `}
                   >
-
                     <h3 className="font-semibold">
                       {layer.title}
                     </h3>
-
                   </div>
 
-                  {/* Connector Line */}
+
+                  {/* Connector */}
 
                   {i !== layers.length - 1 && (
-                    <div className="h-10 w-px bg-white/10 mx-auto"></div>
+                    <div className="relative h-14 flex items-center">
+
+                      <div className="w-px h-full bg-white/10"></div>
+
+                      {/* animated data flow */}
+
+                      <div className="absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+
+                    </div>
                   )}
 
                 </div>
@@ -99,7 +112,7 @@ export default function Architecture() {
 
           {/* Details Panel */}
 
-          <div className="bg-white/5 border border-white/10 rounded-xl p-10">
+          <div className="bg-white/5 border border-white/10 rounded-xl p-10 backdrop-blur-sm">
 
             <h3 className="text-2xl font-semibold">
               {layers[active].title}
