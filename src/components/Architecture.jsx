@@ -8,24 +8,24 @@ export default function Architecture() {
 
   const layers = [
     {
-      title: "AI / Data Workloads",
-      desc: "Training pipelines, inference systems and analytics generating massive datasets."
+      title: "AI & Data Workloads",
+      desc: "Machine learning training pipelines, real-time inference systems, and analytics platforms that generate and process massive volumes of data."
     },
     {
       title: "Compute Layer",
-      desc: "GPU clusters orchestrated through Kubernetes powering distributed AI computation."
+      desc: "GPU clusters orchestrated with Kubernetes that power large-scale distributed AI training and high-performance data processing."
     },
     {
       title: "BRONTOSTOR Core Engine",
-      desc: "Distributed orchestration layer managing metadata, replication and intelligent data placement."
+      desc: "The intelligence behind the platform — coordinating metadata, managing replication, and placing data efficiently across the system."
     },
     {
       title: "Distributed Storage Nodes",
-      desc: "Thousands of NVMe and HDD nodes forming a resilient high throughput storage network."
+      desc: "A resilient network of NVMe and HDD storage nodes working together to deliver high throughput and reliability at scale."
     },
     {
       title: "Unified Access Layer",
-      desc: "Applications access data through file, object and block interfaces with a global namespace."
+      desc: "Applications access data seamlessly through file, object, or block interfaces, all within a single global namespace."
     }
   ]
 
@@ -33,7 +33,6 @@ export default function Architecture() {
     <section className="bg-[#0b0b0b] text-white py-32 scroll-mt-24 relative overflow-hidden">
 
       {/* Background glow */}
-
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,80,255,0.15),transparent_70%)]"></div>
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-12">
@@ -43,12 +42,12 @@ export default function Architecture() {
         <div className="text-center max-w-3xl mx-auto">
 
           <h2 className="text-4xl font-bold">
-            Architecture Overview
+            How the Platform Works
           </h2>
 
           <p className="text-gray-400 mt-6">
-            BRONTOSTOR distributes data intelligently across compute
-            and storage nodes to support massive AI workloads.
+            BRONTOSTOR connects compute and storage into a unified distributed
+            system designed to support modern AI infrastructure at massive scale.
           </p>
 
         </div>

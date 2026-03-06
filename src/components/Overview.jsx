@@ -3,24 +3,25 @@ export default function Overview() {
   const cards = [
     {
       title: "Exabyte Scale",
-      desc: "Scale seamlessly up to 8 exabytes with support for thousands of distributed storage nodes."
+      desc: "Grow your infrastructure without limits. BRONTOSTOR can scale across thousands of nodes to manage exabytes of data reliably."
     },
     {
-      title: "AI Optimized",
-      desc: "Built for AI pipelines and GPU accelerated workloads with high throughput performance."
+      title: "Built for AI Workloads",
+      desc: "Optimized for modern AI pipelines with high-throughput performance that keeps GPUs and training systems fully utilized."
     },
     {
-      title: "Multi Protocol",
-      desc: "Unified support for file, block and object storage under a single namespace."
+      title: "Unified Storage",
+      desc: "Access your data through file, block, or object storage — all within a single unified platform."
     },
     {
       title: "Edge Ready",
-      desc: "Designed for low latency environments such as telecom, defense and manufacturing."
+      desc: "Designed for environments where latency matters, including telecom networks, defense systems, and industrial operations."
     }
   ]
 
   return (
-<section className="scroll-mt-24 py-32 bg-gradient-to-b from-white via-gray-50 to-gray-200">
+    <section className="scroll-mt-24 py-32 bg-transparent">
+
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Heading */}
@@ -28,13 +29,13 @@ export default function Overview() {
         <div className="text-center max-w-3xl mx-auto">
 
           <h2 className="text-4xl font-bold text-gray-900">
-            Built for AI Infrastructure at Scale
+            Built for the Next Generation of AI Infrastructure
           </h2>
 
           <p className="text-gray-600 mt-6">
-            BRONTOSTOR is a distributed storage platform
-            designed for AI workloads, edge computing
-            and enterprise-scale infrastructure.
+            BRONTOSTOR provides the storage foundation for modern AI platforms,
+            enabling organizations to handle massive datasets, distributed compute,
+            and real-time edge workloads with confidence.
           </p>
 
         </div>
@@ -55,7 +56,7 @@ export default function Overview() {
 
           <div
             className="
-            h-52
+            h-56
             w-full
             max-w-md
             overflow-y-auto

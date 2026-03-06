@@ -10,15 +10,15 @@ export default function CTA() {
       <div className="relative max-w-5xl mx-auto px-6 text-center">
 
         <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-          Deploy AI Infrastructure
+          Ready to Scale Your
           <br />
-          at Exabyte Scale
+          AI Infrastructure?
         </h2>
 
         <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-          BRONTOSTOR enables organizations to power AI workloads,
-          edge computing and massive data platforms with
-          enterprise-grade storage performance.
+          BRONTOSTOR provides the storage foundation for modern AI platforms,
+          helping teams manage massive datasets, power GPU workloads,
+          and scale infrastructure with confidence.
         </p>
 
 
@@ -26,27 +26,31 @@ export default function CTA() {
 
         <div className="flex flex-col md:flex-row justify-center gap-6 mt-12">
 
-          <button className="
+          <button
+            className="
             px-8 py-4
             bg-gradient-to-r from-purple-600 to-blue-500
             rounded-lg
             font-semibold
             hover:scale-105
             transition
-          ">
+          "
+          >
             Download Datasheet
           </button>
 
 
-          <button className="
+          <button
+            className="
             px-8 py-4
             border border-white/20
             rounded-lg
             font-semibold
             hover:bg-white hover:text-black
             transition
-          ">
-            Contact Sales
+          "
+          >
+            Talk to Sales
           </button>
 
         </div>

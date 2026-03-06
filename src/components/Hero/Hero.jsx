@@ -9,7 +9,7 @@ export default function Hero() {
   useEffect(() => {
 
     const handleScroll = () => {
-      setOffset(window.scrollY * 0.6)
+      setOffset(window.scrollY * 0.3)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -44,17 +44,18 @@ export default function Hero() {
         <div>
 
           {/* Tag */}
-          <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400">
-            Data Center Platform
+          <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-400">
+            AI Infrastructure Platform
           </span>
+
 
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">
 
-            Scale Exabyte Storage <br />
+            Storage Built to Power <br />
 
-            <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-              for Edge AI
+            <span className="text-white">
+              AI at Massive Scale
             </span>
 
           </h1>
@@ -63,8 +64,9 @@ export default function Hero() {
           {/* Description */}
           <p className="text-gray-300 mt-6 max-w-lg text-base sm:text-lg">
 
-            BRONTOSTOR is a unified distributed storage platform designed
-            for AI, edge computing and exabyte-scale infrastructure.
+            BRONTOSTOR is a distributed storage platform designed for modern
+            AI systems. From edge deployments to exabyte-scale data centers,
+            it keeps data fast, reliable, and always ready for compute-heavy workloads.
 
           </p>
 
@@ -72,15 +74,15 @@ export default function Hero() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
 
-            <button className="px-6 sm:px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-lg font-semibold hover:scale-105 transition">
+            <button className="px-6 sm:px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition">
 
-              Watch Demo
+              See It in Action
 
             </button>
 
             <button className="px-6 sm:px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition">
 
-              Download Datasheet
+              View Datasheet
 
             </button>
 
@@ -94,6 +96,7 @@ export default function Hero() {
 
           <img
             src="/images/dashboard.webp"
+            alt="BRONTOSTOR dashboard interface"
             className="w-[420px] xl:w-[520px] rounded-xl shadow-2xl border border-white/10 float-animation"
           />
 

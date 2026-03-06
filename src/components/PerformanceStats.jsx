@@ -9,9 +9,9 @@ export default function PerformanceStats() {
   const [startCount, setStartCount] = useState(false)
 
   const metrics = [
-    { value: 8, label: "Exabyte Storage", suffix: " EB" },
-    { value: 8000, label: "Storage Nodes", suffix: "+" },
-    { value: 30, label: "GB/s Throughput", suffix: " GB/s" },
+    { value: 8, label: "Total Storage Capacity", suffix: " EB" },
+    { value: 8000, label: "Distributed Storage Nodes", suffix: "+" },
+    { value: 30, label: "Data Throughput", suffix: " GB/s" },
     { value: 10000, label: "Containers Supported", suffix: "+" }
   ]
 
@@ -43,12 +43,13 @@ export default function PerformanceStats() {
         <div className="text-center max-w-3xl mx-auto">
 
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Performance at Massive Scale
+            Built to Perform at Massive Scale
           </h2>
 
           <p className="text-gray-600 mt-6 text-base sm:text-lg">
-            BRONTOSTOR delivers enterprise-grade storage performance
-            designed for large scale AI and data infrastructure.
+            BRONTOSTOR powers modern AI infrastructure with the scale,
+            speed, and reliability required to process enormous datasets
+            across distributed environments.
           </p>
 
         </div>

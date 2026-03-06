@@ -7,31 +7,31 @@ export default function Capabilities() {
   const [active, setActive] = useState(null)
 
   const capabilities = [
-    {
-      title: "GPU Direct Storage",
-      desc: "Accelerate AI workloads by enabling direct GPU ↔ storage transfer."
-    },
-    {
-      title: "RDMA Networking",
-      desc: "Ultra-low latency networking for distributed AI."
-    },
-    {
-      title: "Multi-Protocol Access",
-      desc: "Unified support for file, object and block storage."
-    },
-    {
-      title: "Kubernetes Integration",
-      desc: "Seamless orchestration for containerized workloads."
-    },
-    {
-      title: "NVMe Optimized",
-      desc: "High-throughput NVMe optimized storage."
-    },
-    {
-      title: "Enterprise Data Protection",
-      desc: "Encryption, replication and erasure coding."
-    }
-  ]
+  {
+    title: "GPU Direct Storage",
+    desc: "Move data straight from storage to GPUs without unnecessary hops, so AI models train faster and pipelines stay efficient."
+  },
+  {
+    title: "RDMA Networking",
+    desc: "Ultra-fast communication between nodes that keeps distributed AI systems responsive even at massive scale."
+  },
+  {
+    title: "Multi-Protocol Access",
+    desc: "Access your data the way your applications need it — file, object, or block — all from the same platform."
+  },
+  {
+    title: "Kubernetes Integration",
+    desc: "Built to work naturally with Kubernetes, making it easy to run and manage containerized AI workloads."
+  },
+  {
+    title: "NVMe Optimized",
+    desc: "Designed to fully unlock the speed of NVMe storage so large datasets can be processed without bottlenecks."
+  },
+  {
+    title: "Enterprise Data Protection",
+    desc: "Keep critical data safe with built-in encryption, replication, and resilient storage architecture."
+  }
+]
 
   const radius = 220
 
