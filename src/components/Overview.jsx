@@ -20,9 +20,42 @@ export default function Overview() {
   ]
 
   return (
-    <section className="scroll-mt-24 py-32 bg-transparent">
+    <section className="relative scroll-mt-24 py-32 bg-transparent overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* Floating background images */}
+
+      {/* Floating background images */}
+<div className="absolute inset-0 pointer-events-none overflow-hidden">
+
+  <img
+    src="/images/server-rack.jpg"
+    className="absolute left-4 top-20 w-100 h-80 opacity-90 blur-[1px] float-animation " style={{ animationDelay: "3s" }}
+  />
+
+  <img
+    src="/images/database.jpg"
+    className="absolute right-10 top-24 w-100  h-80 opacity-90 blur-[1px] float-animation"
+    style={{ animationDelay: "2s" }}
+  />
+
+  <img
+    src="/images/network.jpg"
+    className="absolute left-1/7 bottom-16 w-70 h-60 opacity-80 blur-[1px] float-animation"
+    style={{ animationDelay: "4s" }}
+  />
+
+  <img
+    src="/images/storage-node.jfif"
+    className="absolute right-1/6 bottom-1 w-70 h-60 opacity-70 blur-[1px] float-animation"
+    style={{ animationDelay: "1s" }}
+  />
+
+</div>
+
+
+      {/* Content */}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Heading */}
 
@@ -65,7 +98,7 @@ export default function Overview() {
             scrollbar-hide
             py-16
             space-y-6
-          "
+            "
           >
 
             {cards.map((card, i) => (
@@ -80,7 +113,7 @@ export default function Overview() {
                 rounded-xl
                 shadow-md
                 flex flex-col justify-center
-              "
+                "
               >
 
                 <h3 className="text-xl font-semibold text-gray-900">

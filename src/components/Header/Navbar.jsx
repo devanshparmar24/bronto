@@ -18,8 +18,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-24 px-6 md:px-12 flex justify-between items-center z-50 transition-all duration-500
-      ${scrolled ? "bg-[#0b0b0b] border-b border-gray-800" : "bg-transparent border-transparent"}`}
+      className={`fixed top-0 left-0 w-full h-24 px-6 md:px-12 flex justify-between items-center z-50 transition-all duration-500 bg-[#0b0b0b] border-b border-gray-800"`}
     >
 
       {/* Logo */}
@@ -39,7 +38,7 @@ export default function Navbar() {
 
           <button className="relative px-7 py-3 text-[14px] font-semibold tracking-[0.1em] uppercase flex items-center gap-2 text-white hover:opacity-55 transition">
 
-            Infrastructure
+            Products
             <ChevronDown size={12}/>
 
             <span className="absolute bottom-0 left-7 right-7 h-px bg-white opacity-35 scale-x-0 origin-left transition-transform duration-300"></span>
@@ -49,7 +48,7 @@ export default function Navbar() {
 
           <button className="relative px-7 py-3 text-[14px] font-semibold tracking-[0.1em] uppercase flex items-center gap-2 text-white hover:opacity-55 transition">
 
-            Software
+            Industries
             <ChevronDown size={12}/>
 
             <span className="absolute bottom-0 left-7 right-7 h-px bg-white opacity-35 scale-x-0 origin-left transition-transform duration-300"></span>
@@ -67,7 +66,7 @@ export default function Navbar() {
 
           <button className="relative px-7 py-3 text-[14px] font-semibold tracking-[0.1em] uppercase flex items-center gap-2 text-white hover:opacity-55 transition">
 
-            Company
+            Careers
             <ChevronDown size={12}/>
 
             <span className="absolute bottom-0 left-7 right-7 h-px bg-white opacity-35 scale-x-0 origin-left transition-transform duration-300"></span>
@@ -84,16 +83,16 @@ export default function Navbar() {
 
         <a
           href="/contact"
-          className="px-7 py-3 text-[12px] font-bold tracking-[0.15em] uppercase bg-white text-black hover:opacity-80 transition"
+          className="px-7 rounded-3xl py-3 text-[12px] font-bold tracking-[0.15em] uppercase bg-white text-black hover:opacity-80 transition"
         >
-          Deploy Now
+          Reach Us
         </a>
 
       </div>
 
 
       {/* Mobile Menu */}
-      <button className="lg:hidden text-white relative z-10">
+      <button className="lg:hidden text-white rounded-xl relative z-10">
 
         <Menu size={24} />
 

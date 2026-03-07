@@ -25,9 +25,38 @@ export default function Specs() {
   }
 
   return (
-    <section className="bg-white scroll-mt-24 py-20 md:py-28 lg:py-32">
+    <section className="relative bg-white scroll-mt-24 py-20 md:py-28 lg:py-32 overflow-hidden">
 
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
+      {/* Background collage */}
+
+      <div className="absolute inset-0 pointer-events-none">
+
+        <img
+          src="/images/server1.jpg"
+          className="absolute left-6 top-10 w-70 h-90 opacity-60 rotate-6"
+        />
+
+        <img
+          src="/images/server2.jpg"
+          className="absolute right-10 top-24 w-80 h-70 opacity-50 -rotate-6"
+        />
+
+        <img
+          src="/images/server3.jpg"
+          className="absolute left bottom-6 w-80 h-70 opacity-40 rotate-12"
+        />
+
+        <img
+          src="/images/server4.jpg"
+          className="absolute right-1/20 bottom-16 w-90 opacity-40 -rotate-12"
+        />
+
+      </div>
+
+
+      {/* Content */}
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
 
         {/* Heading */}
 

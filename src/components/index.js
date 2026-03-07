@@ -8,6 +8,7 @@ import CTA from "./CTA";
 import Overview from "./Overview";
 import PerformanceStats from "./PerformanceStats";
 import Specs from "./Specs";
+import Testimonials from "./Testimonials";
 export {Footer,
         Navbar,
         Hero,
@@ -17,5 +18,6 @@ export {Footer,
         CTA,
         Overview,
         PerformanceStats,
-        Specs
+        Specs,
+        Testimonials
     }

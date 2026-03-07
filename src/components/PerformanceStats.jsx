@@ -47,8 +47,7 @@ export default function PerformanceStats() {
           </h2>
 
           <p className="text-gray-600 mt-6 text-base sm:text-lg">
-            BRONTOSTOR powers modern AI infrastructure with the scale,
-            speed, and reliability required to process enormous datasets
+            Process enormous datasets
             across distributed environments.
           </p>
 

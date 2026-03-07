@@ -46,8 +46,7 @@ export default function Architecture() {
           </h2>
 
           <p className="text-gray-400 mt-6">
-            BRONTOSTOR connects compute and storage into a unified distributed
-            system designed to support modern AI infrastructure at massive scale.
+            Supports modern AI infrastructure at massive scale.
           </p>
 
         </div>

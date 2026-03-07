@@ -1,107 +1,84 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#0b0b0b] text-gray-400 pt-20 md:pt-24 pb-10 px-6 sm:px-8 md:px-12">
+    <footer className="bg-[#0b0b0b] text-gray-400 pt-20 pb-10 px-6 sm:px-8 md:px-12">
 
-      {/* Top Section */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 mb-20 md:mb-24">
+      <div className="max-w-7xl mx-auto">
 
-        {/* Newsletter */}
-        <div className="max-w-lg">
-          <h3 className="text-white text-xl sm:text-2xl md:max-w-md font-medium leading-snug mb-8">
-            Keep up with the latest news and content from Tsecond
-          </h3>
+        {/* Logo */}
+        <div className="mb-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
-          <div className="relative w-full max-w-sm">
+          <img
+            src="https://tsecond.netlify.app/company-logo/Tsecond-Logo-White.svg"
+            alt="Company Logo"
+            className="w-28"
+          />
 
-            <input
-              type="email"
-              placeholder="Enter your Email Address"
-              className="w-full bg-transparent border border-gray-600 rounded-full px-5 py-3 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-white transition"
-            />
+          <p className="text-sm max-w-sm text-gray-400">
+            High-performance infrastructure built for modern data and AI workloads.
+          </p>
 
-            <button className="absolute right-1 top-1 bottom-1 w-10 rounded-full bg-white flex items-center justify-center">
-              <span className="text-black text-lg">→</span>
-            </button>
-
-          </div>
         </div>
+
 
         {/* Links */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mb-16">
 
-          {/* Products */}
+          {/* Platform */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-6">
-              Products
+            <h4 className="text-white text-sm font-semibold mb-5">
+              Platform
             </h4>
 
-            <ul className="space-y-3 text-sm">
-              <li>Edge HPC</li>
-              <li>Edge AI</li>
-              <li>Edge Storage</li>
-              <li>Data Center</li>
-              <li>Data Movement</li>
+            <ul className="space-y-2 text-sm">
+              <li>Compute</li>
+              <li>Storage</li>
+              <li>Data Systems</li>
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Company */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-6">
-              Quick Links
+            <h4 className="text-white text-sm font-semibold mb-5">
+              Company
             </h4>
 
-            <ul className="space-y-3 text-sm">
-              <li>About Us</li>
-              <li>Solutions</li>
+            <ul className="space-y-2 text-sm">
+              <li>About</li>
               <li>Careers</li>
-              <li>Blogs</li>
-              <li>Procurement</li>
+              <li>News</li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Resources */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-6">
-              Support
+            <h4 className="text-white text-sm font-semibold mb-5">
+              Resources
             </h4>
 
-            <ul className="space-y-3 text-sm">
-              <li>Help Center</li>
-              <li>Privacy Policy</li>
-              <li>Terms of Use</li>
-              <li>Legal</li>
+            <ul className="space-y-2 text-sm">
+              <li>Documentation</li>
+              <li>Support</li>
+              <li>Policies</li>
             </ul>
           </div>
 
         </div>
-      </div>
 
-      {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-gray-800 pt-8 text-center sm:text-left">
 
-        {/* Social Icons */}
-        <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-sm">
-          <a href="https://www.facebook.com/tsecond.inc/" className="hover:text-white transition">
-            Facebook
-          </a>
+        {/* Bottom */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-gray-800 pt-6 text-xs">
 
-          <a href="https://www.instagram.com/tsecond.inc/" className="hover:text-white transition">
-            Instagram
-          </a>
+          <p className="text-gray-500">
+            © 2026 All rights reserved
+          </p>
 
-          <a href="https://x.com/tsecondinc" className="hover:text-white transition">
-            X
-          </a>
+          <div className="flex gap-5">
+            <a href="#" className="hover:text-white transition">X</a>
+            <a href="#" className="hover:text-white transition">LinkedIn</a>
+            <a href="#" className="hover:text-white transition">Instagram</a>
+          </div>
 
-          <a href="https://www.linkedin.com/company/tsecondinc/" className="hover:text-white transition">
-            LinkedIn
-          </a>
         </div>
-
-        {/* Copyright */}
-        <p className="text-xs text-gray-500">
-          © 2026 Tsecond Inc. All Rights Reserved
-        </p>
 
       </div>
 
